@@ -49,7 +49,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
             <div className="flex flex-col gap-6">
               <div className="flex flex-col items-center text-center">
                 <h1 className="text-2xl font-bold">Welcome back</h1>
-                <p className="text-muted-foreground">Login to your Fintel account</p>
+                <p className="text-muted-foreground">Login to your finanalysis account</p>
               </div>
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
