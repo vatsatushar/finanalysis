@@ -18,32 +18,43 @@ export default function StockTicker() {
       try {
         const res = await fetch("/api/stocks")
         const data = await res.json()
+
         console.log("Client received:", data)
-  
-        const validStocks = Array.isArray(data)
-          ? data.filter(
-              (s: Stock) =>
-                typeof s.price === "number" && typeof s.change === "number"
-            )
-          : []
-  
-        setStocks(validStocks)
+
+        const stockData = Array.isArray(data)
+          ? data
+          : [
+              {
+                symbol: data.symbol,
+                price: Number(data.close),
+                change: Number(data.percent_change) * 100,
+              },
+            ]
+
+        console.log("Processed stock data:", stockData)
+
+        setStocks(stockData)
       } catch (err) {
         console.error("Failed to fetch stock data:", err)
       }
     }
-  
+
     fetchStocks()
+
     const interval = setInterval(fetchStocks, 30000)
+
     return () => clearInterval(interval)
   }, [])
-  
 
   useEffect(() => {
     const interval = setInterval(() => {
       setFade("out")
+
       setTimeout(() => {
-        setIndex((prev) => (stocks.length ? (prev + 1) % stocks.length : 0))
+        setIndex((prev) =>
+          stocks.length ? (prev + 1) % stocks.length : 0
+        )
+
         setFade("in")
       }, 400)
     }, 3500)
@@ -69,18 +80,27 @@ export default function StockTicker() {
           fade === "in" ? "slide-up-fade-in" : "slide-up-fade-out"
         }`}
       >
-        <span className="text-sm font-medium">{stock.symbol}</span>
-        {typeof stock.price === "number" && typeof stock.change === "number" ? (
+        <span className="text-sm font-medium">
+          {stock.symbol}
+        </span>
+
+        {typeof stock.price === "number" &&
+        typeof stock.change === "number" ? (
           <span
             className={`ml-3 ${
-              stock.change >= 0 ? "text-green-400" : "text-red-400"
+              stock.change >= 0
+                ? "text-green-400"
+                : "text-red-400"
             }`}
           >
-            ₹{stock.price.toFixed(2)} ({stock.change >= 0 ? "+" : ""}
+            ₹{stock.price.toFixed(2)} (
+            {stock.change >= 0 ? "+" : ""}
             {stock.change.toFixed(2)}%)
           </span>
         ) : (
-          <span className="ml-3 text-yellow-300">Data unavailable</span>
+          <span className="ml-3 text-yellow-300">
+            Data unavailable
+          </span>
         )}
       </div>
     </div>
