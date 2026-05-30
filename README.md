@@ -1,24 +1,25 @@
 # 📈 FinAnalysis
 
-A full-stack stock analytics platform that provides real-time market insights, historical trend analysis, financial news aggregation, and personalized stock monitoring.
+A full-stack financial analytics platform built with Next.js and TypeScript that provides real-time stock tracking, market insights, financial news aggregation, and interactive data visualization.
 
-## 🚀 Features
+## 🚀 Key Features
 
-* Real-time stock market analytics
-* Historical trend visualization
+* Real-time stock market monitoring
+* Historical trend analysis and visualization
 * Financial news aggregation
-* Secure user authentication
-* Interactive dashboard
-* Market overview and insights
-* Personalized stock monitoring
+* Secure authentication and protected routes
+* Interactive analytics dashboard
+* Personalized stock tracking and monitoring
+* Responsive user interface
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
 ### Frontend
 
 * Next.js
-* TypeScript
 * React
+* TypeScript
+* Tailwind CSS
 
 ### Backend
 
@@ -29,35 +30,36 @@ A full-stack stock analytics platform that provides real-time market insights, h
 
 * MongoDB
 
-### Data & Analytics
+### Data Sources
 
 * Financial Market APIs
 * Historical Market Data
-* Interactive Charts
+* Real-time Stock Quotes
 
 ## 📊 Project Overview
 
-FinAnalysis helps users analyze market trends, monitor stock performance, and stay updated with financial news through an intuitive dashboard and analytics platform.
+FinAnalysis enables users to analyze market trends, monitor stock performance, and access financial information through a unified analytics dashboard. The platform integrates external market data sources and presents insights through an intuitive user experience.
 
-## 🔒 Authentication
+## 🔐 Authentication & Security
 
-* User Signup
+* User Registration
 * User Login
-* JWT-based Authentication
+* JWT-Based Authentication
 * Protected Dashboard Access
 
 ## 📈 Future Enhancements
 
-* Portfolio Tracking
-* Watchlist Management
-* AI-powered Market Insights
+* Portfolio Management
+* Watchlist Creation
+* AI-Powered Market Insights
 * Stock Price Forecasting
-* Advanced Financial Analytics
+* Advanced Risk Analytics
 
 ## 👨‍💻 Developer
 
 **Tushar Vatsa**
 
-* GitHub: https://github.com/vatsatushar
-* LinkedIn: https://www.linkedin.com/in/tushar9145/
-* Portfolio: http://tushar.ashish-ranjan.com
+LinkedIn: https://www.linkedin.com/in/tushar9145/
+
+Portfolio: http://tushar.ashish-ranjan.com
+
